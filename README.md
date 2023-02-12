@@ -13,6 +13,20 @@ This repo demonstrates creating and understanding containers from scratch throug
 
 ---
 
+## Quick Start
+
+Compile and run the Go code:
+```
+go run main.go run /bin/bash
+```
+
+Check the host name inside and ourside the container, after creating a namespace:
+```
+hostname
+```
+
+---
+
 ## What are namespaces?
 
 - A Namespace limits, what can a process see.
