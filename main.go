@@ -1,6 +1,6 @@
 package main
 
-// import the necessary packages
+// import necessary packages
 import (
 	"fmt"
 	"os"
@@ -48,17 +48,17 @@ func child() {
 	must(syscall.Sethostname([]byte("container")))
 	// Chroot to the new root filesystem
 	must(syscall.Chroot)("/home/memal7/ubuntu-fs"))
-	// Change the current working directory to the new root filesystem
+	// change the current working directory to the new root filesystem
 	must(os.Chdir("/"))
-	// Mount the proc filesystem in the directory /proc
+	// mount the proc filesystem in the directory /proc
 	must(syscall.Mount("proc", "proc", "proc", 0, ""))
-	// Mount the sysfs filesystem in the directory /sys
+	// mount the sysfs filesystem in the directory /sys
 	must(syscall.Mount("temporary-fs", "mytmpfs", "tmpfs", 0, ""))
 	
 	must(cmd.Run())
-	// Unmount or clean up the proc filesystem
+	// unmount or clean up the proc filesystem
 	must(syscall.Unmount("/proc", 0))
-	// Unmount or clean up the tmpfs filesystem
+	// unmount or clean up the tmpfs filesystem
 	must(syscall.Unmount("/mytmpfs", 0))
 
 }
