@@ -8,7 +8,7 @@ import (
 	"syscall"
 )
 
-// main function
+// main function - check if the program is run or child
 func main() {
 	switch os.Args[1] {
 	case "run":
@@ -20,7 +20,7 @@ func main() {
 	}
 }
 
-// run function - create a new process
+// run function - if run, then print the arguments and create a new process
 func run() {
 	fmt.Println("running \n", os.Args[2:])
 
@@ -28,11 +28,11 @@ func run() {
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	// create a new UTS namespace for the process (set hostname) and PID namespace to isolate the process from the host
+	// create an UTS (Unix Timesharing System) namespace for setting the hostname and PID namespace to isolate the process from the host
 	cmd.SysProcAttr = &syscall.SysProcAttr {
 		Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWIPC,
 	}
-
+	// execute the commands (above cmds)
 	must(cmd.Run())
 }
 
