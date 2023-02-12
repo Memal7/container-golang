@@ -34,6 +34,7 @@ ps
 
 Check the filesystem inside and ourside of a container (after and before mounting):
 ```
+go run main.go run /bin/bash
 mount
 ```
 
