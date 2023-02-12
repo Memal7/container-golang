@@ -52,7 +52,7 @@ hostname
 - The isolated environment is called a `chroot jail` in which only files explicitly put in the new root filesystem are accessible by the process running in the jail.
 - Container technology is based on the concept of `Chroot` but in a modernized way.
 
----
+    ![chroot](./00_images/chroot.png)
 
 ## How to create, manage, validate, and operate containers?
 
