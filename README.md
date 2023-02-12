@@ -25,11 +25,13 @@ This repo demonstrates creating and understanding containers from scratch throug
 
 ## What are control groups (cgroups)?
 
+- cgroups limit, how much resource can a process use.
 - cgroups are interfaces in the Linux kernel that can be used to restrict access to computer resources (CPU, memory, I/O) for certain processes.
-- In context of containers, this allows you to set limits for a container (***"How much resource can a process use?"***).
+- In context of containers, this allows you to set limits for a container.
 - Containers benefit from cgroups primarily because they allow system resources to be limited for processes grouped by a container.
 
 ---
 
 ## How to create, manage, validate, and operate containers?
+
 Check out this repo: [Docker-Container](https://github.com/Memal7/docker-container)
