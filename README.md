@@ -46,6 +46,14 @@ hostname
 
 ---
 
+## What's Chroot?
+
+- Chroot command, introduced in Version 7 Unix in 1979, isolates a process from the root filesystem. It hides the files from the process and simulates a new root directory.
+- The isolated environment is called a `chroot jail` in which only files explicitly put in the new root filesystem are accessible by the process running in the jail.
+- Container technology is based on the concept of `Chroot` but in a modernized way.
+
+---
+
 ## How to create, manage, validate, and operate containers?
 
 Check out this repo: [Docker-Container](https://github.com/Memal7/docker-container)
