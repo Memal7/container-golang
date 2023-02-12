@@ -46,6 +46,10 @@ func child() {
 	cmd.Stderr = os.Stderr
 
 	must(syscall.Sethostname([]byte("container")))
+	// Chroot to the new root filesystem
+	must(syscall.Chroot)("/home/memal7/ubuntu-fs"))
+	// Change the current working directory to the new root filesystem
+	must(os.Chdir("/"))
 	
 	must(cmd.Run())
 
