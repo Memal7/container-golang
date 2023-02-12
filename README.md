@@ -20,9 +20,21 @@ Compile and run the Go code:
 go run main.go run /bin/bash
 ```
 
-Check the host name inside and ourside the container, after creating a namespace:
+Check the host name inside and ourside a container (after and before creating a namespace):
 ```
+go run main.go run /bin/bash
 hostname
+```
+
+List all processes inside a container, which are running inside the container (after creating a PID namespace):
+```
+go run main.go run /bin/bash
+ps
+```
+
+Check the filesystem inside and ourside of a container (after and before mounting):
+```
+mount
 ```
 
 ---
@@ -57,3 +69,11 @@ hostname
 ## How to create, manage, validate, and operate containers?
 
 Check out this repo: [Docker-Container](https://github.com/Memal7/docker-container)
+
+---
+
+## References
+
+- [My KCNA (Kubernetes and Cloud Native Associate repo](https://github.com/Memal7/kcna)
+- [My Docker-Container repo](https://github.com/Memal7/docker-container)
+- 
